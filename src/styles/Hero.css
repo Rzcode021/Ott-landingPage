@@ -10,6 +10,7 @@
   overflow: hidden;
   margin-top: 70px;
   background: #0f0f0f;
+  animation: sectionCascade 1s cubic-bezier(0.33, 0.66, 0.66, 1) 0.1s both;
 }
 
 /* Galaxy Background */
@@ -38,6 +39,7 @@ canvas {
   max-width: 900px;
   padding: 40px 20px;
   animation: slideUp 1s ease-out;
+  animation-fill-mode: both;
 }
 
 /* Title */

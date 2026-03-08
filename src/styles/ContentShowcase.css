@@ -7,6 +7,7 @@
   background: #0f0f0f;
   padding: 120px 40px;
   overflow: hidden;
+  animation: sectionCascade 1s cubic-bezier(0.33, 0.66, 0.66, 1) 0.3s both;
 }
 
 .content-showcase::before {
@@ -88,6 +89,14 @@
   transition: all 0.3s ease;
 }
 
+.poster-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
 .carousel-item.active .poster {
   box-shadow: 0 20px 80px rgba(229, 9, 20, 0.4),
               0 0 60px rgba(229, 9, 20, 0.2),
@@ -99,8 +108,9 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(229, 9, 20, 0.1));
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(229, 9, 20, 0.05));
   z-index: 2;
+  pointer-events: none;
 }
 
 .poster-overlay {
@@ -109,7 +119,7 @@
   left: 0;
   right: 0;
   padding: 20px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5), transparent);
   z-index: 3;
 }
 
@@ -158,6 +168,7 @@
   max-width: 1400px;
   margin: 0 auto 80px;
   position: relative;
+  padding-bottom: 30px;
 }
 
 .row-title {
@@ -169,14 +180,13 @@
 
 .horizontal-scroll-container {
   overflow: hidden;
-  scroll-behavior: smooth;
   width: 100%;
 }
 
 .horizontal-row {
   display: flex;
   gap: 20px;
-  padding: 10px 0;
+  padding: 20px 0 10px 0;
 }
 
 .horizontal-item {
@@ -194,6 +204,14 @@
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.horizontal-poster .poster-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .glow-border {
@@ -246,7 +264,7 @@
 }
 
 .horizontal-item:hover .horizontal-poster {
-  transform: scale(1.05) translateY(-10px);
+  transform: scale(1.05) translateY(-5px);
   box-shadow: 0 15px 50px rgba(229, 9, 20, 0.3);
 }
 
